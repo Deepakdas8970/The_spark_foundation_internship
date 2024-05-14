@@ -1,0 +1,480 @@
+/* Reset CSS */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+        font-family: Arial, sans-serif;
+}
+
+header {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        display: flex;
+}
+
+header h1 {
+        font-size: 24px;
+}
+nav{
+        margin-left:20%;
+        margin-top: 5px;
+        
+}
+@media screen and (max-width: 576px) {
+        nav{
+        margin-left:-0%;
+        margin-top: 0;
+        color: blue;
+        
+        } 
+        header {
+        background-color:yellow;
+        color: red;
+        padding: 0px;
+        display: block;
+        
+        }
+        nav ul li {
+         display: inline;
+         margin-right: 0px;
+         font-size: 10px;
+               
+        }
+         
+} 
+
+nav ul {
+        list-style-type: none;
+       
+        
+}
+
+nav ul li {
+        display: inline;
+        margin-right: 20px;
+}
+
+nav ul li a {
+        color: white;
+        text-decoration: none;
+}
+
+main {
+        padding: 20px;
+}
+
+.hero {
+        text-align: center;
+        margin-bottom: 40px;
+}
+
+.features {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+}
+
+.feature {
+        flex-basis: 30%;
+        padding: 20px;
+        background-color: #f7f7f7;
+        margin-bottom: 20px;
+        text-align: center;
+}
+
+footer {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+}
+
+/* Styles for the features section */
+.features {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30%; /* Adjust width as needed */
+    margin-bottom: 20px; /* Add some space between features */
+}
+
+.feature h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #666;
+    font-size: 1em;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .features {
+        flex-direction: column; /* Stack features vertically on small screens */
+    }
+
+    .feature {
+        width: 100%; /* Make features occupy full width on small screens */
+    }
+}
+/* image slider */
+ .slider {
+            overflow: hidden;
+            width: 100%;
+            max-width: 1200px; /* Set a max-width for the slider */
+            height: auto; /* Auto adjust height */
+            position: relative;
+            margin: 0px;
+            
+            
+        }
+        
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%; /* Ensure slides take full width */
+        }
+        
+        .slide {
+            max-width: 1200px;
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        img {
+            width: 100%; /* Ensure images don't exceed container width */
+            height: 500px; /* Maintain aspect ratio */
+        }
+
+        @media (max-width: 768px) {
+            .slider {
+                max-width: 100%; /* Adjust max-width for smaller screens */
+            }
+        }
+
+
+/* For Contact Us section */
+.contact {
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    background: red;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 150px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 0 20px;
+    }
+}
+
+
+
+/* for view all customers page*/
+
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.customer-list {
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tfoot td {
+    background-color: #f7f7f7;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/* Transfer Money page*/
+
+
+
+/* Reset CSS */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+        font-family: Arial, sans-serif;
+}
+
+header {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+}
+
+header h1 {
+        font-size: 24px;
+}
+
+nav ul {
+        list-style-type: none;
+}
+
+nav ul li {
+        display: inline;
+        margin-right: 20px;
+}
+
+nav ul li a {
+        color: white;
+        text-decoration: none;
+}
+
+main {
+        padding: 20px;
+}
+
+.transfer-form {
+        max-width: 500px;
+        margin: 0 auto;
+}
+
+.form-group {
+        margin-bottom: 20px;
+}
+
+label {
+        display: block;
+        margin-bottom: 5px;
+}
+
+input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+}
+
+button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+}
+
+button:hover {
+        background-color: #0056b3;
+}
+
+footer {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+}
+
+/* For Transfer history page*/
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.transfer-history {
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tfoot td {
+    background-color: #f7f7f7;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

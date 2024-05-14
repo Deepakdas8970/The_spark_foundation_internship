@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Make a Donation</h1>
+  </header>
+  <main>
+    <form id="paymentForm" method="POST">
+      <label for="amount">Select Amount:</label>
+      <select id="amount" name="amount">
+        <option value="10">&#x20b9 10</option>
+        <option value="20">&#x20b9 20</option>
+        <option value="50">&#x20b9 50</option>
+        <option value="100">&#x20b9 100</option>
+      </select>
+      <label for="paymentMethod">Select Payment Method:</label>
+      <select id="paymentMethod" name="paymentMethod">
+        <option value="creditCard">Credit Card</option>
+        <option value="razorpay">RazorPay</option>
+      </select>
+      <button type="submit" id="submit">Proceed to Payment</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2024 Donation Page</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    document.querySelector('#submit').addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent form submission
+      let amount =document.querySelector('#amount').value*100;
+      let paymentMethod=document.querySelector('#paymentMethod').value;
+      
+      
+      
+      
+
+      if(paymentMethod==='razorpay'){
+              var options = {
+        "key": "rzp_test_RznqRR9AlX5yZQ", // Enter the Key ID generated from the Dashboard
+        
+        "amount":amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+       
+        "name": "Das Visuals",
+        "description": "Test Transaction",
+        "image": "https://das-visuals.netlify.app/images/logo.png",
+         // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function (response) {
+            
+          let paymentId=response.razorpay_payment_id;
+          $.ajax({
+                  url:'paymentProcess.php',
+                  type:"POST",
+                  data:{paymentid : paymentId, paymentAmount: amount},
+                  success:function(finalresponse){
+                    
+                          if(finalresponse=='done'){
+                                  window.location.href="http://localhost/the%20spark%20foundation%20internship/payment%20gateway%20integration/payment%20gateway%20integration/success.php";
+                          }
+                          else alert('payment failed');
+                  }
+                  
+                  
+          })
+          
+        },
+        "theme": {
+          "color": "#3399cc"
+        }
+      };
+
+      var rzp1 = new Razorpay(options);
+      rzp1.open();
+      }
+      else{
+              alert('Credit method not supported please choose razorpay method');
+      }
+    });
+  </script>
+</body>
+</html>

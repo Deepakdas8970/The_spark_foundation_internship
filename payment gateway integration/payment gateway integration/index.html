@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Donation Page</h1>
+  </header>
+  <main >
+    <button id="donateBtn" style="position: 
+    relative; left: 50%; transform: translateX(-50%);">Donate Now</button>
+  </main>
+  <footer>
+    <p>&copy; 2024 Donation Page</p>
+  </footer>
+  <script>
+          // Function to handle click event on "Donate Now" button
+          function handleDonateButtonClick() {
+                  // Redirect to the payment page
+                  window.location.href =
+                          "payment.html";
+          }
+          
+          
+          // Event listener for "Donate Now" button
+const donateButton = document.getElementById("donateBtn");
+donateButton.addEventListener("click", handleDonateButtonClick);
+
+  </script>
+</body>
+</html>
